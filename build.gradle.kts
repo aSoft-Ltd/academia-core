@@ -13,14 +13,6 @@ allprojects {
         google()
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
-}
-
-val v = "0.0.0"
-
-group = "tz.co.asoft"
-version = v
-
-subprojects {
-    val p = this
-    version = v
+    group = "tz.co.asoft"
+    version = "0.0.0"
 }

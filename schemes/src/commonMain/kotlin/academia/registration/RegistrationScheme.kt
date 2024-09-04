@@ -37,5 +37,5 @@ interface RegistrationScheme {
     /**
      * finish the registration process by actually creating an account that someone can now log in
      */
-    fun finish(code: String): Later<String>
+    fun finish(account: String): Later<String>
 }

@@ -9,19 +9,17 @@ interface RegistrationScheme {
     /**
      * This should kick of the registration process
      */
-    fun start(school: SchoolParams, person: PersonParams): Later<RegistrationInfo>
+    fun start(school: SchoolParams, person: PersonParams): Later<StartRegistrationParams>
+
+    fun canRegister(params: SchoolParams): Later<SchoolParams>
 
     /**
-     * Sends the verification code to the set destination provided that they have began the registration process
-     * @param account email/phone number of the individual who has begun the registration process
-     * @return the account that was passed in or an error if the [account] has not begun registration yet
+     * This should kick of the registration process
      */
-    fun sendVerificationCode(account: String): Later<String>
+    fun start(params: StartRegistrationParams): Later<StartRegistrationParams>
 
-    /**
-     * Verifies that the account holder is indeed the owner of the email/phone they claim to have registered with
-     */
-    fun verify(code: String): Later<VerificationResult>
+
+    val verification: Verification
 
     /**
      * Set up different configuration parameters

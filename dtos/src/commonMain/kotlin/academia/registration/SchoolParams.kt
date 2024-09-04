@@ -4,7 +4,11 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class SchoolParams(
-    val name: String,
-    val domain: String,
-    val color: String
-)
+    var name: String?,
+    var domain: String?,
+    var color: String?
+) {
+    companion object {
+        val Default by lazy { SchoolParams("", "", "#00ff00") }
+    }
+}

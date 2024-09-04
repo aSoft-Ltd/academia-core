@@ -1,13 +1,19 @@
 package academia.registration
 
-class RegistrationDestinations(
-    private val base: String
-) {
+class RegistrationDestinations(private val base: String) {
+
     fun begin() = "$base/begin"
 
-    fun sendVerificationCode() = "$base/verification/code/send"
+    fun canRegister() = "$base/eligible"
 
-    fun verify() = "$base/verification/code/verify"
+    val verification by lazy { VerificationDestinations("$base/verification") }
+
+    val info by lazy { Info("$base/info") }
+
+    class Info(private val base: String) {
+        fun school() = "$base/school"
+        fun person() = "$base/person"
+    }
 
     fun configure() = "$base/configure"
 

@@ -4,6 +4,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class SignInParams(
-    val account: String,
-    val password: String
+    var account: String?,
+    var password: String?
 )

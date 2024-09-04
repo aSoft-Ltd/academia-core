@@ -25,6 +25,7 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             api(projects.academiaDtos)
+            api(libs.raven.outbox.core)
         }
 
         commonTest.dependencies {

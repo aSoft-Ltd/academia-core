@@ -1,16 +1,24 @@
 package academia.authentication
 
+import academia.tooling.RegistrationMethod
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Session(
     val school: School,
     val user: User
 ) {
+    @Serializable
     data class School(
-        val name: String,
-        val domain: String,
+        val uid: String,
+        val name: String
     )
 
+    @Serializable
     data class User(
+        val uid: String,
         val name: String,
-        val email: String
+        val account: String,
+        val method: RegistrationMethod
     )
 }

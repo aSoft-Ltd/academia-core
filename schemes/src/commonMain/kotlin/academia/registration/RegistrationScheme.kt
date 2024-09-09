@@ -11,13 +11,15 @@ interface RegistrationScheme {
      */
     fun start(school: SchoolParams, person: PersonParams): Later<StartRegistrationParams>
 
-    fun canRegister(params: SchoolParams): Later<SchoolParams>
-
     /**
      * This should kick of the registration process
      */
     fun start(params: StartRegistrationParams): Later<StartRegistrationParams>
 
+    /**
+     * Should check to see if the school can be registered
+     */
+    fun canRegister(params: SchoolParams): Later<SchoolParams>
 
     val verification: Verification
 

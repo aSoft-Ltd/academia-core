@@ -8,7 +8,7 @@ interface Verification {
      * @param account email/phone number of the individual who has begun the registration process
      * @return the account that was passed in or an error if the [account] has not begun registration yet
      */
-    fun sendCode(account: String): Later<String>
+    fun sendCode(account: String): Later<StartRegistrationParams>
 
     /**
      * Retrieve verification information for the [account] that has begun registration

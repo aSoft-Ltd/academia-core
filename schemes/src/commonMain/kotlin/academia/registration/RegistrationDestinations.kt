@@ -4,13 +4,13 @@ class RegistrationDestinations(private val base: String) {
 
     fun begin() = "$base/begin"
 
-    fun canRegister() = "$base/eligible"
-
     val verification by lazy { VerificationDestinations("$base/verification") }
 
-    val info by lazy { Info("$base/info") }
+    val info by lazy { SchoolPersonSplit("$base/info") }
 
-    class Info(private val base: String) {
+    val check by lazy { SchoolPersonSplit("$base/check") }
+
+    class SchoolPersonSplit(private val base: String) {
         fun school() = "$base/school"
         fun person() = "$base/person"
     }

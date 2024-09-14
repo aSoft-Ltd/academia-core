@@ -6,6 +6,9 @@ import koncurrent.Later
  * An interface to help with the registration process for methods that are unverified/untrusted (i.e. Phone/Email)
  */
 interface RegistrationScheme {
+
+    val check: RegistrationCheckScheme
+
     /**
      * This should kick of the registration process
      */
@@ -16,12 +19,8 @@ interface RegistrationScheme {
      */
     fun start(params: StartRegistrationParams): Later<StartRegistrationParams>
 
-    /**
-     * Should check to see if the school can be registered
-     */
-    fun canRegister(params: SchoolParams): Later<SchoolParams>
 
-    val verification: Verification
+    val verification: VerificationScheme
 
     /**
      * Set up different configuration parameters

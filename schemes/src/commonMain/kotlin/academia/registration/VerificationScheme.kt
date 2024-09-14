@@ -2,7 +2,7 @@ package academia.registration
 
 import koncurrent.Later
 
-interface Verification {
+interface VerificationScheme {
     /**
      * Sends the verification code to the set destination provided that they have began the registration process
      * @param account email/phone number of the individual who has begun the registration process

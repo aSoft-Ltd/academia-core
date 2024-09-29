@@ -22,4 +22,6 @@ class RegistrationLogMessages {
 
     fun configure(credentials: ConfigurationParams) = "Configuring registration for ${credentials.account}"
     fun finish(account: String) = "Finishing registration for $account"
+
+    fun abort(account: String) = "Aborting registration for $account"
 }

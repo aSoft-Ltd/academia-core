@@ -1,7 +1,11 @@
 package academia.authentication
 
 class AuthenticationDestinations(private val base: String) {
+
     fun signIn() = "$base/sign/in"
+
+    fun signIn(account: String, password: String) = signIn() + "?account=$account&password=$password"
+
     fun deleteAccount() = "$base/account/delete"
 
     val password by lazy { Password("$base/password") }

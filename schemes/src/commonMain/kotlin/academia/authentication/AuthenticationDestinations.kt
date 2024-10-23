@@ -12,6 +12,7 @@ class AuthenticationDestinations(private val base: String) {
 
     class Password(private val base: String) {
         fun reset(account: String) = "$base/reset/$account"
+        fun message() = "$base/reset/message"
         fun change() = "$base/change"
     }
 }

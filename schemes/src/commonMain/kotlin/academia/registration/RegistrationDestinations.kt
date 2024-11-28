@@ -15,6 +15,8 @@ class RegistrationDestinations(private val base: String) {
         fun person() = "$base/person"
     }
 
+    fun structure() = "$base/structure"
+
     fun configure() = "$base/configure"
 
     fun abort(account: String) = "$base/abort/$account"

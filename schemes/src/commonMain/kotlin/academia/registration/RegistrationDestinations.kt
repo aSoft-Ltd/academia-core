@@ -15,7 +15,7 @@ class RegistrationDestinations(private val base: String) {
         fun person() = "$base/person"
     }
 
-    fun structure() = "$base/structure"
+    fun structure() = "$base/school/structure"
 
     fun configure() = "$base/configure"
 

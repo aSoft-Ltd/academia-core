@@ -25,8 +25,8 @@ fun privacyPolicy(
         EmphasizedParagraph(
             emphasis = "Academia",
             continuation = """
-                is one of the asoft product (find more about asoft at https://asoft.co.tz/) that provides a comprehensive
-                digital platform designed to streamline school management and enhance the flow of information across all levels 
+                is one of aSoft's digital services (find more about asoft at https://asoft.co.tz) that provides a comprehensive
+                platform designed to streamline school management and enhance the flow of information across all levels 
                 of school operations. It offers powerful insights into academic activities, financials and general school programs. 
                 (Please visit our website at $domain. for more details about who the audience are and how they can benefit by using our platform)
             """.trimIndent()

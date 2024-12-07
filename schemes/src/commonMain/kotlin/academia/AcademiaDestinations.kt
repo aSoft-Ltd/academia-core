@@ -4,6 +4,7 @@ import academia.account.AccountDestinations
 import academia.authentication.AuthenticationDestinations
 import academia.legal.LegalDestinations
 import academia.registration.RegistrationDestinations
+import academia.website.WebsiteDestinations
 
 class AcademiaDestinations(private val base: String) {
     val outbox by lazy { AcademiaOutboxDestinations("$base/outbox") }
@@ -11,7 +12,7 @@ class AcademiaDestinations(private val base: String) {
     val authentication by lazy { AuthenticationDestinations("$base/authentication") }
     val legal by lazy { LegalDestinations("$base/legal") }
     val account by lazy { AccountDestinations("$base/account") }
-    fun website() = "$base/website"
+    val website by lazy { WebsiteDestinations("$base/website") }
     fun settings() = "$base/settings"
     fun toBase(base: String) = AcademiaDestinations(base)
 }

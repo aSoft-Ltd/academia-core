@@ -5,7 +5,7 @@ class WebsiteDestinations(val base: String) {
     private val prefix by lazy { if (base.isEmpty()) "" else "$base/$root" }
     fun home() = "$prefix/"
     fun about() = "$prefix/about"
-    fun academics() = "$prefix/academics"
+    val academics by lazy { AcademicsDestinations(prefix) }
     fun admissions() = "$prefix/admissions"
     fun news() = "$prefix/news"
     fun fees() = "$prefix/fees"

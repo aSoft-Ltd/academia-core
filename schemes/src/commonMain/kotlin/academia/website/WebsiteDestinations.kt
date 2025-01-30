@@ -29,7 +29,7 @@ class WebsiteDestinations(val base: String) {
     }
 
     class HomeDestinations(private val base: String) {
-        private val root = "/"
+        private val root = "home"
         private val prefix by lazy { if (base.isEmpty()) "" else "$base/$root" }
         fun index() = "$prefix/"
         fun hero() = index()
@@ -39,6 +39,6 @@ class WebsiteDestinations(val base: String) {
         fun news() = "$base/news"
         fun contact() = "$base/contact"
         fun routes() = "$root/*"
-        fun isolated() = AcademicsDestinations("")
+        fun isolated() = HomeDestinations("")
     }
 }

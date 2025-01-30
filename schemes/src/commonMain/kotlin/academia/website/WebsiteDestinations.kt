@@ -12,4 +12,16 @@ class WebsiteDestinations(val base: String) {
     fun contacts() = "$prefix/contacts"
     fun routes() = "$root/*"
     fun isolated() = WebsiteDestinations("")
+
+    class AcademicsDestinations(private val base: String) {
+        private val root = "academics"
+        private val prefix by lazy { if (base.isEmpty()) "" else "$base/$root" }
+        fun index() = "$prefix/$base"
+        fun hero() = index()
+        fun subjects() = "$base/subjects"
+        fun nursery() = "$base/nursery"
+        fun primary() = "$base/primary"
+        fun routes() = "$root/*"
+        fun isolated() = AcademicsDestinations("")
+    }
 }

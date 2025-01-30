@@ -21,6 +21,9 @@ class WebsiteDestinations(val base: String) {
         fun subjects() = "$base/subjects"
         fun nursery() = "$base/nursery"
         fun primary() = "$base/primary"
+        fun oLevel() = "$base/oLevel"
+        fun aLevel() = "$base/aLevel"
+        fun extraCurriculum() = "$base/extraCurriculum"
         fun routes() = "$root/*"
         fun isolated() = AcademicsDestinations("")
     }

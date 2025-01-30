@@ -16,7 +16,7 @@ class WebsiteDestinations(val base: String) {
     class AcademicsDestinations(private val base: String) {
         private val root = "academics"
         private val prefix by lazy { if (base.isEmpty()) "" else "$base/$root" }
-        fun index() = "$prefix/$base"
+        fun index() = "$prefix/"
         fun hero() = index()
         fun subjects() = "$base/subjects"
         fun nursery() = "$base/nursery"

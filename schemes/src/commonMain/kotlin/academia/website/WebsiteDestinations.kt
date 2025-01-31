@@ -1,44 +1,41 @@
 package academia.website
 
-class WebsiteDestinations(val base: String) {
-    private val root by lazy { "website" }
-    private val prefix by lazy { if (base.isEmpty()) "" else "$base/$root" }
-    val home by lazy { HomeDestinations(prefix) }
+class WebsiteDestinations(prefix: String, private val root: String) {
+    private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
+    val home by lazy { Home(this.prefix, "home") }
+    val academics by lazy { Academics(this.prefix, "academics") }
     fun about() = "$prefix/about"
-    val academics by lazy { AcademicsDestinations(prefix) }
     fun admissions() = "$prefix/admissions"
     fun news() = "$prefix/news"
     fun fees() = "$prefix/fees"
     fun contacts() = "$prefix/contacts"
     fun routes() = "$root/*"
-    fun isolated() = WebsiteDestinations("")
+    fun isolated() = WebsiteDestinations("", root)
 
-    class AcademicsDestinations(private val base: String) {
-        private val root = "academics"
-        private val prefix by lazy { if (base.isEmpty()) "" else "$base/$root" }
-        fun index() = "$prefix/"
+    class Academics(prefix: String, private val root: String) {
+        private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
+        private fun index() = "$prefix/"
         fun hero() = index()
         fun subjects() = "$prefix/subjects"
         fun nursery() = "$prefix/nursery"
         fun primary() = "$prefix/primary"
-        fun oLevel() = "$prefix/oLevel"
-        fun aLevel() = "$prefix/aLevel"
-        fun extraCurriculum() = "$prefix/extraCurriculum"
+        fun secondary() = "$prefix/secondary"
+        fun advance() = "$prefix/advance"
+        fun activities() = "$prefix/activities"
         fun routes() = "$root/*"
-        fun isolated() = AcademicsDestinations("")
+        fun isolated() = Academics("", root)
     }
 
-    class HomeDestinations(private val base: String) {
-        private val root = "home"
-        private val prefix by lazy { if (base.isEmpty()) "" else "$base/$root" }
-        fun index() = "$prefix/"
+    class Home(prefix: String, private val root: String) {
+        private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
+        private fun index() = "$prefix/"
         fun hero() = index()
-        fun missionVision() = "$base/missionVision"
-        fun gallery() = "$base/gallery"
-        fun message() = "$base/message"
-        fun news() = "$base/news"
-        fun contact() = "$base/contact"
+        fun missionVision() = "$prefix/missionVision"
+        fun gallery() = "$prefix/gallery"
+        fun message() = "$prefix/message"
+        fun news() = "$prefix/news"
+        fun contact() = "$prefix/contact"
         fun routes() = "$root/*"
-        fun isolated() = HomeDestinations("")
+        fun isolated() = Home("", root)
     }
 }

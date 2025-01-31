@@ -15,6 +15,7 @@ class AcademiaDestinations(private val base: String) { // e.g. "https://academia
     val account by lazy { AccountDestinations("$base/account") }
     val website by lazy { WebsiteDestinations(base) }
     val admission by lazy { AdmissionDestinations("$base/admission") }
+    fun search(query: String) = "$base/search/$query"
     fun settings() = "$base/settings"
     fun toBase(base: String) = AcademiaDestinations(base)
 }

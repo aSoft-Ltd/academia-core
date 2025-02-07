@@ -1,13 +1,29 @@
 package academia.account
 
-class AccountDestinations(private val base: String) {
-    val personal by lazy { AccountMicroDestinations("$base/personal") }
+class AccountDestinations(prefix: String, private val root: String) {
+    private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
+    val personal by lazy { Personal(this.prefix, "personal") }
+    val school by lazy { School(this.prefix, "school") }
+    fun routes() = "$root/*"
+    fun isolated() = AccountDestinations("", root)
 
-    val school by lazy { AccountMicroDestinations("$base/school") }
+    class School(prefix: String, private val root: String) {
+        private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
+        fun profile() = "$prefix/profile"
+        fun form() = "$prefix/form"
+        fun routes() = "$root/*"
+        fun isolated() = School("", root)
+    }
 
-    class AccountMicroDestinations(private val base: String) {
-        fun menu() = "$base/menu"
-        fun view() = "$base/view"
-        fun form() = "$base/form"
+    class Personal(prefix: String, private val root: String) {
+        private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
+        fun contacts() = "$prefix/contacts"
+        fun credits() = "$prefix/credits"
+        fun social() = "$prefix/social"
+        fun security() = "$prefix/security"
+        fun payments() = "$prefix/payments"
+        fun activities() = "$prefix/activities"
+        fun routes() = "$root/*"
+        fun isolated() = Personal("", root)
     }
 }

@@ -13,7 +13,7 @@ class AcademiaDestinations(private val prefix: String) { // e.g. "https://academ
     val registration by lazy { RegistrationDestinations("$prefix/registration") }
     val authentication by lazy { AuthenticationDestinations("$prefix/authentication") }
     val legal by lazy { LegalDestinations("$prefix/legal") }
-    val account by lazy { AccountDestinations("$prefix/account") }
+    val account by lazy { AccountDestinations(prefix, "account") }
     val website by lazy { WebsiteDestinations(prefix, "website") }
     val blog by lazy { BlogDestinations("$prefix/blog") }
     val admission by lazy { AdmissionDestinations("$prefix/admission") }

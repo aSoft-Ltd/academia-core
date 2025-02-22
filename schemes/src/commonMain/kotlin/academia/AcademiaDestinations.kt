@@ -15,7 +15,7 @@ class AcademiaDestinations(private val prefix: String) { // e.g. "https://academ
     val legal by lazy { LegalDestinations("$prefix/legal") }
     val account by lazy { AccountDestinations(prefix, "account") }
     val website by lazy { WebsiteDestinations(prefix, "website") }
-    val blog by lazy { BlogDestinations("$prefix/blog") }
+    val blog by lazy { BlogDestinations(prefix, "blog") }
     val admissions by lazy { AdmissionDestinations("$prefix/admissions") }
     fun search(query: String) = "$prefix/search/$query"
     fun settings() = "$prefix/settings"

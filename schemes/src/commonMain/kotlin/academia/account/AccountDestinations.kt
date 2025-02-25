@@ -19,6 +19,7 @@ class AccountDestinations(prefix: String, private val root: String) {
         private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
         fun contacts() = "$prefix/contacts"
         fun credits() = "$prefix/credits"
+        fun preferences() = "$prefix/preferences"
         fun social() = "$prefix/social"
         fun security() = "$prefix/security"
         fun payments() = "$prefix/payments"

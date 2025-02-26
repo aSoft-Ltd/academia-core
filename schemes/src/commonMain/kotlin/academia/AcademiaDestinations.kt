@@ -1,6 +1,6 @@
 package academia
 
-import academia.account.AccountDestinations
+import academia.profile.ProfileDestinations
 import academia.admission.AdmissionDestinations
 import academia.authentication.AuthenticationDestinations
 import academia.blog.BlogDestinations
@@ -13,7 +13,7 @@ class AcademiaDestinations(private val prefix: String) { // e.g. "https://academ
     val registration by lazy { RegistrationDestinations("$prefix/registration") }
     val authentication by lazy { AuthenticationDestinations("$prefix/authentication") }
     val legal by lazy { LegalDestinations("$prefix/legal") }
-    val account by lazy { AccountDestinations(prefix, "account") }
+    val profile by lazy { ProfileDestinations(prefix, "profile") }
     val website by lazy { WebsiteDestinations(prefix, "website") }
     val blog by lazy { BlogDestinations(prefix, "blog") }
     val admissions by lazy { AdmissionDestinations("$prefix/admissions") }

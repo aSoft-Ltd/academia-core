@@ -9,8 +9,15 @@ class ProfileDestinations(prefix: String, private val root: String) {
 
     class School(prefix: String, private val root: String) {
         private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
-        fun profile() = prefix
-        fun form() = "$prefix/form"
+        fun index() = prefix
+        fun contacts() = "$prefix/contacts"
+        fun social() = "$prefix/social"
+        fun security() = "$prefix/security"
+        fun payments() = "$prefix/payments"
+        fun address() = "$prefix/address"
+        fun credits() = "$prefix/credits"
+        fun academics() = "$prefix/academics"
+        fun fee() = "$prefix/fee"
         fun routes() = "$root/*"
         fun isolated() = School("", root)
     }

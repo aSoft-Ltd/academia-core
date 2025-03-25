@@ -11,6 +11,7 @@ class ProfileDestinations(prefix: String, private val root: String) {
         private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
         fun index() = prefix
         fun contacts() = "$prefix/contacts"
+        fun preferences() = "$prefix/preferences"
         fun social() = "$prefix/social"
         fun security() = "$prefix/security"
         fun payments() = "$prefix/payments"

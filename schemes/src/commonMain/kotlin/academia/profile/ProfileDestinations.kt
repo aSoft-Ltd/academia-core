@@ -19,6 +19,7 @@ class ProfileDestinations(prefix: String, private val root: String) {
         fun credits() = "$prefix/credits"
         fun academics() = "$prefix/academics"
         fun fee() = "$prefix/fee"
+        fun legal() = "$prefix/legal"
         fun routes() = "$root/*"
         fun isolated() = School("", root)
     }

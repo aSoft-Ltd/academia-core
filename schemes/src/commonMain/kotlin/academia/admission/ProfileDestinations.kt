@@ -8,7 +8,7 @@ class ProfileDestinations(prefix: String, private val root: String) {
     fun payments() = "$prefix/payments"
     fun attachments() = "$prefix/attachments"
     fun conversations() = "$prefix/conversations"
-    fun activity() = "$prefix/activity"
+    fun activities() = "$prefix/activities"
     fun routes() = "$prefix/*"
     fun isolated() = ProfileDestinations("", root)
 }

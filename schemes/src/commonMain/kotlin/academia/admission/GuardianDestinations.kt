@@ -1,15 +1,12 @@
 package academia.admission
 
-class ProfileDestinations(prefix: String, private val root: String) {
+class GuardianDestinations(prefix: String, private val root: String) {
     private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
     fun index() = prefix
-    fun guardians() = "$prefix/guardians"
-    fun results() = "$prefix/results"
     fun payments() = "$prefix/payments"
     fun attachments() = "$prefix/attachments"
     fun conversations() = "$prefix/conversations"
     fun activities() = "$prefix/activities"
-    val guardian by lazy { GuardianDestinations(this.prefix, "guardians") }
     fun routes() = "$prefix/*"
-    fun isolated() = ProfileDestinations("", root)
+    fun isolated() = GuardianDestinations("", root)
 }

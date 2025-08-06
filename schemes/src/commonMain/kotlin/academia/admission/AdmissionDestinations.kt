@@ -4,7 +4,8 @@ class AdmissionDestinations(prefix: String, private val root: String) {
     private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
     fun home() = prefix
     fun applicants() = "$prefix/applicants"
-    fun opportunity() = "$prefix/opportunities"
+    fun opportunities() = "$prefix/opportunities"
     val applicant by lazy { ApplicantDestinations(this.prefix, "applicants/profile") }
     val guardian by lazy { GuardianDestinations(this.prefix, "guardians") }
+    val opportunity by lazy { OpportunityDestinations(this.prefix, "opportunity") }
 }

@@ -30,7 +30,7 @@ class WebsiteDestinations(prefix: String, private val root: String) {
         private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
         private fun index() = "$prefix/"
         fun hero() = index()
-        fun missionVision() = "$prefix/missionVision"
+        fun missionVision() = "$prefix/missionvision"
         fun gallery() = "$prefix/gallery"
         fun message() = "$prefix/message"
         fun news() = "$prefix/news"

@@ -5,7 +5,7 @@ class ApplicantDestinations(prefix: String, private val root: String) {
     fun index() = prefix
     fun guardians() = "$prefix/guardians"
     fun results() = "$prefix/results"
-    fun payments() = "$prefix/payments"
+    fun transactions() = "$prefix/transactions"
     fun attachments() = "$prefix/attachments"
     fun conversations() = "$prefix/conversations"
     fun activities() = "$prefix/activities"

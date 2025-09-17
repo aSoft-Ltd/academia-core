@@ -8,5 +8,4 @@ class AdmissionDestinations(prefix: String, private val root: String) {
     val applicant by lazy { ApplicantDestinations(this.prefix, "applicants/profile") }
     val guardian by lazy { GuardianDestinations(this.prefix, "guardians") }
     val opportunity by lazy { OpportunityDestinations(this.prefix, "opportunity") }
-    val interview by lazy { InterviewDestinations(this.prefix, "opportunity/interview") }
 }

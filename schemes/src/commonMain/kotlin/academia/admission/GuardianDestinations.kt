@@ -7,6 +7,7 @@ class GuardianDestinations(prefix: String, private val root: String) {
     fun attachments() = "$prefix/attachments"
     fun conversations() = "$prefix/conversations"
     fun activities() = "$prefix/activities"
+    fun contacts() = "$prefix/contacts"
     fun routes() = "$prefix/*"
     fun isolated() = GuardianDestinations("", root)
 }

@@ -8,5 +8,6 @@ class InterviewDestinations(prefix: String, private val root: String) {
     fun subjects() = "$prefix/subjects"
     fun payments() = "$prefix/payments"
     fun routes() = "$prefix/*"
+    val sitting by lazy { SittingDestinations(this.prefix, "sitting") }
     fun isolated() = InterviewDestinations("", root)
 }

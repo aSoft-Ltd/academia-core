@@ -3,6 +3,7 @@ package academia.admission
 class AdmissionDestinations(prefix: String, private val root: String) {
     private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
     fun home() = prefix
+    val enroll by lazy{ EnrollDestinations(this.prefix, "enroll")}
     fun applicants() = "$prefix/applicants"
     fun opportunities() = "$prefix/opportunities"
     val applicant by lazy { ApplicantDestinations(this.prefix, "applicants/profile") }

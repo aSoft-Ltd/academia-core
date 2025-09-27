@@ -2,6 +2,7 @@ package academia.website
 
 class WebsiteDestinations(prefix: String, private val root: String) {
     private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
+    fun dashboard()="$prefix/dashboard"
     val home by lazy { Home(this.prefix, "home") }
     val academics by lazy { Academics(this.prefix, "academics") }
     fun about() = "$prefix/about"

@@ -5,6 +5,8 @@ class AdmissionDestinations(prefix: String, private val root: String) {
     fun home() = prefix
     fun enrollments() = "$prefix/enrolled"
     val enroll by lazy { EnrollDestinations(this.prefix, "enroll") }
+    fun admitted() = "$prefix/admitted"
+    val admitted by lazy { AdmittedDestinations(this.prefix, "admit") }
     fun applicants() = "$prefix/applicants"
     fun opportunities() = "$prefix/opportunities"
     val applicant by lazy { ApplicantDestinations(this.prefix, "applicants/profile") }

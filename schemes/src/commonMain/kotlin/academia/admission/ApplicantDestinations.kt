@@ -10,6 +10,7 @@ class ApplicantDestinations(prefix: String, private val root: String) {
     fun conversations() = "$prefix/conversations"
     fun activities() = "$prefix/activities"
     fun contacts() = "$prefix/contacts"
+    fun invoices() = "$prefix/invoices"
     fun routes() = "$prefix/*"
     fun isolated() = ApplicantDestinations("", root)
 }

@@ -1,6 +1,7 @@
 package academia.admission
 
 import academia.admission.bulk.AdmittedDestinations
+import academia.admission.bulk.AdvertDestinations
 import academia.admission.bulk.EnrollDestinations
 import academia.admission.bulk.RejectedDestinations
 import academia.admission.bulk.RemindedDestinations
@@ -16,6 +17,8 @@ class AdmissionDestinations(prefix: String, private val root: String) {
     val rejected by lazy { RejectedDestinations(this.prefix, "rejected") }
     fun reminded() = "$prefix/reminded"
     val reminded by lazy { RemindedDestinations(this.prefix, "reminded") }
+    fun adverts() = "$prefix/adverts"
+    val adverts by lazy { AdvertDestinations(this.prefix,"adverts") }
     fun applicants() = "$prefix/applicants"
     fun opportunities() = "$prefix/opportunities"
     val applicant by lazy { ApplicantDestinations(this.prefix, "applicants/profile") }

@@ -9,7 +9,7 @@ class OpportunityDestinations(prefix: String, private val root: String) {
     fun results() = "$prefix/results"
     fun requirements() = "$prefix/requirements"
     fun advertisements() = "$prefix/advertisement"
-    fun interview ()= "$prefix/interview"
+    fun interview() = "$prefix/interviews"
     val interview by lazy { InterviewDestinations(this.prefix, "interview") }
     fun routes() = "$prefix/*"
     fun isolated() = OpportunityDestinations("", root)

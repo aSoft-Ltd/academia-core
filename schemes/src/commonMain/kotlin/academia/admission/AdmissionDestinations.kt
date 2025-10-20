@@ -16,6 +16,7 @@ class AdmissionDestinations(prefix: String, private val root: String) {
     val rejected by lazy { RejectedDestinations(this.prefix, "rejected") }
     fun reminded() = "$prefix/reminded"
     val reminded by lazy { RemindedDestinations(this.prefix, "reminded") }
+    fun adverts() = "$prefix/adverts"
     fun applicants() = "$prefix/applicants"
     fun opportunities() = "$prefix/opportunities"
     val applicant by lazy { ApplicantDestinations(this.prefix, "applicants/profile") }

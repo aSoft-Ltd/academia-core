@@ -4,6 +4,7 @@ import academia.admission.AdmissionDestinations
 import academia.authentication.AuthenticationDestinations
 import academia.blog.BlogDestinations
 import academia.legal.LegalDestinations
+import academia.payments.PaymentDestinations
 import academia.profile.ProfileDestinations
 import academia.registration.RegistrationDestinations
 import academia.users.UserDestinations
@@ -17,6 +18,7 @@ class AcademiaDestinations(private val prefix: String) { // e.g. "https://academ
     val profile by lazy { ProfileDestinations(prefix, "profile") }
     val website by lazy { WebsiteDestinations(prefix, "website") }
     val blog by lazy { BlogDestinations(prefix, "blog") }
+    val payment by lazy { PaymentDestinations(prefix, "payment") }
     val admissions by lazy { AdmissionDestinations(prefix, "admissions") }
     val users by lazy { UserDestinations(prefix, "users") }
     fun search(query: String) = "$prefix/search/$query"

@@ -2,7 +2,7 @@ package academia.admission
 
 class InterviewDestinations(prefix: String, private val root: String) {
     private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
-    fun index() = prefix
+    fun index() = "$prefix/candidates"
     fun sittings() = "$prefix/sittings"
     fun requirements() = "$prefix/requirements"
     fun subjects() = "$prefix/subjects"

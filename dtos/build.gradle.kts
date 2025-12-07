@@ -20,6 +20,7 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             api(libs.lexi.api)
+            api(libs.habitat.core)
             api(libs.koncurrent.later.coroutines)
             api(kotlinx.serialization.json)?.because("We are implementing art json renderer for now. If art is removed, we no longer need this dependency")
         }

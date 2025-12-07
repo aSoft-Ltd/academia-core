@@ -4,6 +4,7 @@ import org.jetbrains.compose.ExperimentalComposeLibrary
 plugins {
     kotlin("multiplatform")
     kotlin("plugin.serialization")
+    id("org.jetbrains.kotlinx.rpc.plugin")
 }
 
 description = "The common interfaces between the two shared modules"
@@ -21,6 +22,7 @@ kotlin {
         commonMain.dependencies {
             api(projects.academiaDtos)
             api(libs.raven.outbox.core)
+            implementation(kotlinx.rpc.core)
         }
 
         commonTest.dependencies {
@@ -28,4 +30,3 @@ kotlin {
         }
     }
 }
-

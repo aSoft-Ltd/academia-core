@@ -8,6 +8,6 @@ interface Auth {
     /**
      * Attempts to sign in a user with the provided account and password.
      */
-    suspend fun singIn(account: String, password: String): SignInResult
+    suspend fun login(account: String, password: String): SignInResult
     suspend fun signOut(account: String): String?
 }

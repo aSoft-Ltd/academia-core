@@ -4,26 +4,7 @@ import heimdal.authentication.Token
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class AcademiaToken(
-    val token: String
-) : SignInResult {
-
-//    @Serializable
-//    data class School(
-//        val uid: String,
-//        val name: String,
-//        val brand: Int,
-//        val domain: String,
-//        val logo: String?,
-//        val campuses: List<Campus>
-//    )
-
-//    @Serializable
-//    data class Campus(
-//        val uid: String,
-//        val name: String
-//    )
-
+data class AcademiaToken(val token: String) : SignInResult {
     private val tkn by lazy { Token(token) }
 
     val schools by lazy { tkn.businesses }

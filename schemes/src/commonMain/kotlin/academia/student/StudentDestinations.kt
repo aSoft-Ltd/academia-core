@@ -6,6 +6,8 @@ class StudentDestinations(prefix: String, private val root: String) {
     fun dashboard() = "$prefix/dashboard"
     fun list() = "$prefix/list"
     fun guardians() = "$prefix/guardians"
+    fun sick() = "$prefix/sick"
+    fun absent() = "$prefix/absent"
     fun routes() = "$root/*"
     fun isolated() = StudentDestinations("", root)
 }

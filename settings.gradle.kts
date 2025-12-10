@@ -14,6 +14,10 @@ fun includeSubs(base: String, path: String = base, vararg subs: String) {
     }
 }
 
+listOf("academia-atoms").forEach {
+    includeBuild("../$it")
+}
+
 rootProject.name = "academia-core"
 
 includeSubs("academia", ".", "dtos", "schemes")

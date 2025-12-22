@@ -7,9 +7,10 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data object SchoolRegistrar : Privilege {
-    override val permissions by lazy {
-        emptyList<Permission>() +
-                WebsitePermissions.all +
-                SchoolProfilePermissions.all
+    override val permissions: List<Permission> by lazy {
+        buildList {
+            addAll(WebsitePermissions.all)
+            addAll(SchoolProfilePermissions.all)
+        }
     }
 }

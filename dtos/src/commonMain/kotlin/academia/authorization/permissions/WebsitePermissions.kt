@@ -5,12 +5,12 @@ import kotlinx.serialization.Serializable
 @Serializable
 sealed interface WebsitePermissions : Permission {
     @Serializable
-    data object View : Permission
+    data object View : WebsitePermissions
 
     @Serializable
-    data object Manager : Permission
+    data object Manager : WebsitePermissions
 
     companion object {
-        val all by lazy { listOf(View,Manager) }
+        val all : List<WebsitePermissions> by lazy { listOf(View, Manager) }
     }
 }

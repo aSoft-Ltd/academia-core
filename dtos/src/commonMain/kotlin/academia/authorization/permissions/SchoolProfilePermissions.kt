@@ -6,25 +6,28 @@ import kotlinx.serialization.Serializable
 sealed interface SchoolProfilePermissions : Permission {
 
     @Serializable
-    sealed interface CampusPermissions : Permission {
+    sealed interface CampusPermissions : SchoolProfilePermissions {
         @Serializable
-        data object Create : Permission
+        data object Create : CampusPermissions
 
         @Serializable
-        data object Update : Permission
+        data object Update : CampusPermissions
 
         companion object {
-            val all by lazy { listOf(Create, Update) }
+            val all: List<CampusPermissions> by lazy { listOf(Create, Update) }
         }
     }
 
     @Serializable
-    data object Delete : Permission
+    data object Delete : SchoolProfilePermissions
 
 
     companion object Companion {
-        val all by lazy {
-            CampusPermissions.all + Delete
+        val all: List<Permission> by lazy {
+            buildList {
+                addAll(CampusPermissions.all)
+                add(Delete)
+            }
         }
     }
 }

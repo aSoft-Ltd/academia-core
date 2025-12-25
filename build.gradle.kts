@@ -5,6 +5,7 @@ plugins {
     alias(kotlinz.plugins.compose) apply false
     alias(kotlinz.plugins.root.compiler.compose) apply false
     alias(kotlinz.plugins.root.android) apply false
+    alias(kotlinx.plugins.rpc) apply false
 }
 
 allprojects {

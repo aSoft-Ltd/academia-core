@@ -21,7 +21,6 @@ kotlin {
         commonMain.dependencies {
             api(libs.lexi.api)
             api(libs.habitat.core)
-            api(libs.koncurrent.later.coroutines)
             api(kotlinx.serialization.json)?.because("We are implementing art json renderer for now. If art is removed, we no longer need this dependency")
 
             api("tz.co.asoft:heimdal-dtos:0.0.0")?.because("We need access to heimdal Token")

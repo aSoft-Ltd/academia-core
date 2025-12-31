@@ -1,7 +1,5 @@
 package academia.registration
 
-import koncurrent.Later
-
 /**
  * An interface to help with the registration process for methods that are unverified/untrusted (i.e. Phone/Email)
  */
@@ -12,12 +10,12 @@ interface RegistrationScheme {
     /**
      * This should kick of the registration process
      */
-    fun start(school: SchoolParams, person: PersonParams): Later<StartRegistrationParams>
+    suspend fun start(school: SchoolParams, person: PersonParams): StartRegistrationParams
 
     /**
      * This should kick of the registration process
      */
-    fun start(params: StartRegistrationParams): Later<StartRegistrationParams>
+    suspend fun start(params: StartRegistrationParams): StartRegistrationParams
 
 
     val verification: VerificationScheme
@@ -25,16 +23,16 @@ interface RegistrationScheme {
     /**
      * Set up different configuration parameters
      */
-    fun configure(credentials: ConfigurationParams): Later<ConfigurationParams>
+    suspend fun configure(credentials: ConfigurationParams): ConfigurationParams
 
     /**
      * Provided that an [account] has [start]ed the registration process but not [finish]ed,
      * this method should be able to abort the registration process and delete the account
      */
-    fun abort(account: String): Later<String>
+    suspend fun abort(account: String): String
 
     /**
      * finish the registration process by actually creating an account that someone can now log in
      */
-    fun finish(account: String): Later<String>
+    suspend fun finish(account: String): String
 }

@@ -1,8 +1,6 @@
 package academia.authentication
 
-import koncurrent.Later
-
 interface PasswordScheme {
-    fun reset(account: String): Later<String>
-    fun change(params: Any): Later<Any>
+    suspend fun reset(account: String): String
+    suspend fun change(params: Any): Any
 }

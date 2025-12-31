@@ -1,22 +1,22 @@
 package academia.authentication
 
-import koncurrent.Later
 
+@Deprecated("Do not use this intrerface")
 interface AuthenticationScheme {
 
-    fun signIn(account: String, password: String): Later<Session>
+    suspend fun signIn(account: String, password: String): Session
 
-    fun signIn(params: SignInParams): Later<Session>
+    suspend fun signIn(params: SignInParams): Session
 
     /**
      * Sign out the user on all devices they are currently logged in
      */
-    fun signOutGlobal(params: SignInParams): Later<String>
+    suspend fun signOutGlobal(params: SignInParams): String
 
     /**
      * Removes the account from the server
      */
-    fun deleteAccount(params: SignInParams): Later<SignInParams>
+    suspend fun deleteAccount(params: SignInParams): SignInParams
 
     val password: PasswordScheme
 }

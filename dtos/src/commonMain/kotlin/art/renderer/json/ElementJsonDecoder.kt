@@ -7,7 +7,6 @@ import art.elements.Kind
 import art.elements.Link
 import art.elements.Text
 import art.elements.internal.FertileComponentImpl
-import kollections.getValue
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.int
 import kotlinx.serialization.json.jsonArray

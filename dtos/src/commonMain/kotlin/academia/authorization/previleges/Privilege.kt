@@ -1,7 +1,7 @@
 package academia.authorization.previleges
 
-import academia.authorization.permissions.Permission
 import kotlinx.serialization.Serializable
+import academia.authorization.permissions.Permission
 
 @Serializable
 sealed interface Privilege {

@@ -5,7 +5,7 @@ package academia.registration
  */
 interface RegistrationScheme {
 
-    val check: RegistrationCheckScheme
+    val check: RegistrationCheck
 
     /**
      * This should kick of the registration process

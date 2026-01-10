@@ -1,5 +1,6 @@
 package academia.registration
 
+import academia.curriculum.Curriculum
 import kotlinx.coroutines.flow.Flow
 import kotlinx.rpc.annotations.Rpc
 
@@ -14,5 +15,5 @@ interface Registration {
     /**
      * Starts the registration process for a school with the given parameters
      */
-    suspend fun start(school: SchoolParams): SchoolParams
+    suspend fun start(school: SchoolParams): List<Curriculum>
 }

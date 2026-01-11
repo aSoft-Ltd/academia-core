@@ -1,6 +1,7 @@
 package academia.registration
 
-class RegistrationParams(
+data class RegistrationParams(
     val school: SchoolParams,
+    var person: PersonParams?,
     val curriculum: SchoolCurriculumParams
 )

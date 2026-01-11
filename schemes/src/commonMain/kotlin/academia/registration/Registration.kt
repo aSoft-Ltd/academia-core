@@ -13,7 +13,22 @@ interface Registration {
     fun suggest(name: Flow<String>): Flow<Suggestion>
 
     /**
-     * Starts the registration process for a school with the given parameters
+     * Attempts to begin a registration process for the given school parameters.
      */
-    suspend fun start(school: SchoolParams): List<Curriculum>
+    suspend fun attempt(school: SchoolParams): List<Curriculum>
+
+    /**
+     * Kicks off the registration process with the provided parameters.
+     */
+    suspend fun start(params: RegistrationParams): RegistrationParams
+
+    /**
+     * Resends verification or registration details to the specified account.
+     */
+    suspend fun resend(account: String): String
+
+    /**
+     * Configures password for the newly created account.
+     */
+    suspend fun configure(params: PasswordConfigurationParams)
 }

@@ -5,7 +5,7 @@ package academia.registration
  */
 interface RegistrationScheme {
 
-    val check: RegistrationCheckScheme
+    val check: RegistrationCheck
 
     /**
      * This should kick of the registration process
@@ -23,7 +23,7 @@ interface RegistrationScheme {
     /**
      * Set up different configuration parameters
      */
-    suspend fun configure(credentials: ConfigurationParams): ConfigurationParams
+    suspend fun configure(credentials: PasswordConfigurationParams): PasswordConfigurationParams
 
     /**
      * Provided that an [account] has [start]ed the registration process but not [finish]ed,

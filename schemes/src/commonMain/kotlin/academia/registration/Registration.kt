@@ -19,13 +19,22 @@ interface Registration {
 
     /**
      * Kicks off the registration process with the provided parameters.
+     *
+     * @return a uid that identifies the registration session.
      */
-    suspend fun start(params: RegistrationParams): RegistrationParams
+    suspend fun start(params: RegistrationParams): String
 
     /**
-     * Resends verification or registration details to the specified account.
+     * Resends verification or registration details to the specified [uid].
      */
-    suspend fun resend(account: String): String
+    suspend fun resend(uid: String): String
+
+    /**
+     * Verifies the account associated with the given [uid] and [code].
+     *
+     * @return the uid of the verified account.
+     */
+    suspend fun verify(uid: String, code: String): String
 
     /**
      * Configures password for the newly created account.

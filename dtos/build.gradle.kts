@@ -19,6 +19,7 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
+            api("tz.co.asoft:academia-atoms-core:0.0.0")
             api(libs.lexi.api)
             api(libs.habitat.core)
             api(kotlinx.serialization.json)?.because("We are implementing art json renderer for now. If art is removed, we no longer need this dependency")

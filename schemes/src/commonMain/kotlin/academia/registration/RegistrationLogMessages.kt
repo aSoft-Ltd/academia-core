@@ -20,7 +20,7 @@ class RegistrationLogMessages {
         fun verify(code: String) = "Verifying account that was sent code $code"
     }
 
-    fun configure(credentials: ConfigurationParams) = "Configuring registration for ${credentials.account}"
+    fun configure(credentials: PasswordConfigurationParams) = "Configuring registration for ${credentials.account}"
     fun finish(account: String) = "Finishing registration for $account"
 
     fun abort(account: String) = "Aborting registration for $account"

@@ -39,5 +39,5 @@ interface Registration {
     /**
      * Configures password for the newly created account.
      */
-    suspend fun configure(params: PasswordConfigurationParams)
+    suspend fun configure(code: String, password: String)
 }

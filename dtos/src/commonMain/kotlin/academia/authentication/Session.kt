@@ -1,6 +1,6 @@
 package academia.authentication
 
-import academia.tooling.RegistrationMethod
+import academia.registration.RegistrationMethod
 import kotlinx.serialization.Serializable
 
 @Serializable

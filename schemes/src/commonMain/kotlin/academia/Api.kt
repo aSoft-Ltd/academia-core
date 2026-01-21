@@ -2,6 +2,7 @@ package academia
 
 import academia.authentication.AuthenticationApi
 import academia.legal.LegalApi
+import academia.profile.Profile
 import academia.registration.Registration
 import academia.registration.RegistrationScheme
 
@@ -20,8 +21,10 @@ interface Api : AcademiaScheme {
 
     // TODO: Rename to authentication after we have managed to purge authentication from the API
     override val auth: Auth
-    
+
     val legal: LegalApi
+
+    val profile: Profile
 
     fun terminate()
 }

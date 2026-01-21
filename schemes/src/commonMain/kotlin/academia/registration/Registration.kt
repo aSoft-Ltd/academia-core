@@ -40,6 +40,13 @@ interface Registration {
     suspend fun verify(uid: String, code: String): String
 
     /**
+     * Gets the account identifier associated with the given [uid]
+     *
+     * @return the account (email/password) used to register the account
+     */
+    suspend fun account(uid: String): String?
+
+    /**
      * Configures password for the newly created account.
      * @param code verification code
      * @param password desired password

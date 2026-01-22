@@ -12,14 +12,13 @@ class RegistrationDestinations(private val base: String) {
 
     class SchoolPersonSplit(private val base: String) {
         fun school() = "$base/school"
+        fun curriculum() = "$base/curriculum"
         fun person() = "$base/person"
     }
-
-    fun structure() = "$base/school/structure"
 
     fun configure() = "$base/configure"
 
     fun abort(account: String) = "$base/abort/$account"
 
-    fun finish(account: String) = "$base/finish/$account"
+    fun finish(code: String) = "$base/finish/$code"
 }

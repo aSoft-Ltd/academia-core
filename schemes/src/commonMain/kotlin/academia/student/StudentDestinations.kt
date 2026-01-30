@@ -8,5 +8,5 @@ class StudentDestinations(prefix: String, private val root: String) {
     fun guardians() = "$prefix/guardians"
     fun sick() = "$prefix/sick"
     fun absent() = "$prefix/absent"
-    val profile by lazy { ProfileDestinations(this.prefix, "list") }
+    val profile by lazy { ProfileDestinations(this.prefix, "list/profile") }
 }

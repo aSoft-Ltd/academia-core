@@ -18,6 +18,7 @@ class ProfileDestinations(prefix: String, private val root: String) {
         fun payments() = "$prefix/payments"
         fun address() = "$prefix/address"
         fun credits() = "$prefix/credits"
+        fun domain() = "$prefix/domain"
         fun academics() = "$prefix/academics"
         fun fee() = "$prefix/fee"
         fun rules() = "$prefix/rules"

@@ -23,6 +23,7 @@ class ProfileDestinations(prefix: String, private val root: String) {
         fun fee() = "$prefix/fee"
         fun rules() = "$prefix/rules"
         fun legal() = "$prefix/legal"
+        val campus by lazy { CampusDestinations(this.prefix, "campus") }
         fun routes() = "$root/*"
         fun isolated() = School("", root)
     }

@@ -10,6 +10,7 @@ class CampusDestinations(prefix: String, private val root: String){
     fun credits() = "$prefix/credits"
     fun rules() = "$prefix/rules"
     fun level() = "$prefix/level"
+    val module by lazy { ModuleDestinations(this.prefix,"module") }
     fun legal() = "$prefix/legal"
     fun routes() = "$root/*"
     fun isolated() = CampusDestinations("", root)

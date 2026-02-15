@@ -9,6 +9,7 @@ class CampusDestinations(prefix: String, private val root: String){
     fun payments() = "$prefix/payments"
     fun credits() = "$prefix/credits"
     fun rules() = "$prefix/rules"
+    fun level() = "$prefix/level"
     fun legal() = "$prefix/legal"
     fun routes() = "$root/*"
     fun isolated() = CampusDestinations("", root)

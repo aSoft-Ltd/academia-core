@@ -5,6 +5,7 @@ class ModuleDestinations(prefix: String, private val root: String) {
     fun index() = prefix
     fun programmes() = "${prefix}/programmes"
     fun modules() = "${prefix}/modules"
+    fun stage() = "${prefix}/stage"
     fun routes() = "$root/*"
     fun isolated() = ModuleDestinations("", root)
 }

@@ -6,6 +6,7 @@ class ModuleDestinations(prefix: String, private val root: String) {
     fun programmes() = "${prefix}/programmes"
     fun modules() = "${prefix}/modules"
     fun stage() = "${prefix}/stage"
+    val split by lazy { SplitDestinations(this.prefix, "split") }
     fun routes() = "$root/*"
     fun isolated() = ModuleDestinations("", root)
 }

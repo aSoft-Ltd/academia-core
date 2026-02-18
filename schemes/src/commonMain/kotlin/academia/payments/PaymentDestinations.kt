@@ -4,6 +4,7 @@ class PaymentDestinations(prefix: String, private val root: String) {
     private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
     val wallet by lazy { Wallet(this.prefix, "wallet") }
     val transaction by lazy { Transaction(this.prefix, "transaction") }
+    val invoice by lazy { Invoice(this.prefix, "invoice") }
     fun dashboard() = "$prefix/dashboard"
     fun wallets() = "$prefix/wallets"
     fun invoices() = "$prefix/invoices"
@@ -23,7 +24,16 @@ class PaymentDestinations(prefix: String, private val root: String) {
     class Transaction(prefix: String, private val root: String) {
         private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
         fun info() = "$prefix/info"
+        fun invoice() = "$prefix/invoice"
         fun routes() = "$root/*"
         fun isolated() = Transaction("", root)
+    }
+
+    class Invoice(prefix: String, private val root: String) {
+        private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
+        fun info() = "$prefix/info"
+        fun transactions() = "$prefix/transactions"
+        fun routes() = "$root/*"
+        fun isolated() = Invoice("", root)
     }
 }

@@ -1,5 +1,7 @@
 package academia.profile
 
+import academia.profile.school.CampusDestinations
+
 class ProfileDestinations(prefix: String, private val root: String) {
     private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
     val personal by lazy { Personal(this.prefix, "personal") }

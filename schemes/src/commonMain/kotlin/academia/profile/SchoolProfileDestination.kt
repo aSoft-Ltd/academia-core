@@ -6,8 +6,6 @@ import academia.profile.school.CampusesDestinations
 class SchoolProfileDestination(prefix: String, private val root: String) {
     private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
     fun index() = prefix
-
-    //    fun campuses() = "$prefix/campuses"
     fun campus(uid: String) = CampusDestinations(prefix, "campuses/$uid")
     val campuses by lazy { CampusesDestinations(this.prefix, "campuses") }
     fun contacts() = "$prefix/contacts"

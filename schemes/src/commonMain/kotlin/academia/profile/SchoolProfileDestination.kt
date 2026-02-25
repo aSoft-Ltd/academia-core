@@ -1,12 +1,10 @@
 package academia.profile
 
-import academia.profile.school.CampusDestinations
 import academia.profile.school.CampusesDestinations
 
 class SchoolProfileDestination(prefix: String, private val root: String) {
     private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
     fun index() = prefix
-    fun campus(uid: String) = CampusDestinations(prefix, "campuses/$uid")
     val campuses by lazy { CampusesDestinations(this.prefix, "campuses") }
     fun contacts() = "$prefix/contacts"
     fun preferences() = "$prefix/preferences"
@@ -20,7 +18,6 @@ class SchoolProfileDestination(prefix: String, private val root: String) {
     fun fee() = "$prefix/fee"
     fun rules() = "$prefix/rules"
     fun legal() = "$prefix/legal"
-    val campus by lazy { CampusDestinations(this.prefix, "campus") }
     fun routes() = "$root/*"
     fun isolated() = SchoolProfileDestination("", root)
 }

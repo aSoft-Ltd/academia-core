@@ -12,6 +12,7 @@ class CurriculaDestinations(prefix: String, private val root: String) {
     fun rules() = "$prefix/rules"
     fun legal() = "$prefix/legal"
     fun list() = prefix
-    fun uid(uid: String) = LevelDestinations(this.prefix, uid)
+//    fun uid(uid: String) = LevelDestinations(this.prefix, uid)
+    fun uid(uid: String) = CurriculumDestination(this.prefix, uid)
     fun isolated() = CurriculaDestinations("", root)
 }

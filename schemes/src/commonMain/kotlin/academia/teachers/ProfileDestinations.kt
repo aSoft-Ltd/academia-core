@@ -11,6 +11,7 @@ class ProfileDestinations(prefix: String, private val root: String) {
     fun activity() = "$prefix/activity"
     fun contacts() = "$prefix/contacts"
     fun permissions() = "$prefix/permissions"
+    fun roles() = "$prefix/roles"
     fun routes() = "$prefix/*"
     fun isolated() = ProfileDestinations("", root)
 }

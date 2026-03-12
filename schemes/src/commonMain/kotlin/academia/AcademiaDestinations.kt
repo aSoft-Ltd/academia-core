@@ -8,9 +8,10 @@ import academia.legal.LegalDestinations
 import academia.payments.PaymentDestinations
 import academia.profile.ProfileDestinations
 import academia.registration.RegistrationDestinations
+import academia.results.ResultDestinations
 import academia.student.StudentDestinations
-import academia.users.UsersDestinations
 import academia.teachers.TeacherDestinations
+import academia.users.UsersDestinations
 import academia.website.WebsiteDestinations
 
 class AcademiaDestinations(private val prefix: String) { // e.g. "https://academia.co.tz, http://localhost:9090/v1"
@@ -25,6 +26,7 @@ class AcademiaDestinations(private val prefix: String) { // e.g. "https://academ
     val admissions by lazy { AdmissionDestinations(prefix, "admissions") }
     val users by lazy { UsersDestinations(prefix, "users") }
     val students by lazy { StudentDestinations(prefix, "students") }
+    val results by lazy { ResultDestinations(prefix, "results") }
     val teachers by lazy { TeacherDestinations(prefix, "teachers") }
     val accounts by lazy { AccountDestinations(prefix, "accounts") }
     fun search(query: String) = "$prefix/search/$query"

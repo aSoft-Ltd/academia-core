@@ -5,6 +5,7 @@ class ResultDestinations(prefix: String, private val root: String) {
     fun index() = prefix
     fun routes() = "$root/*"
     fun reports() = "$prefix/reports"
+    fun grades() = "$prefix/grades"
     fun results() = "$prefix/list"
     fun isolated() = ResultDestinations("", root)
 }

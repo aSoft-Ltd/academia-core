@@ -4,7 +4,7 @@ import academia.registration.RegistrationMethod
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Session(
+data class SessionOld(
     val school: School,
     val user: User
 ) {

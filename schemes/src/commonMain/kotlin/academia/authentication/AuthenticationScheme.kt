@@ -4,9 +4,9 @@ package academia.authentication
 @Deprecated("Do not use this intrerface")
 interface AuthenticationScheme {
 
-    suspend fun signIn(account: String, password: String): Session
+//    suspend fun signIn(account: String, password: String): Session
 
-    suspend fun signIn(params: SignInParams): Session
+//    suspend fun signIn(params: SignInParams): Session
 
     /**
      * Sign out the user on all devices they are currently logged in

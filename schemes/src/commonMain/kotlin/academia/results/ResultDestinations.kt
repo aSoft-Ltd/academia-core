@@ -7,5 +7,6 @@ class ResultDestinations(prefix: String, private val root: String) {
     fun reports() = "$prefix/reports"
     fun grades() = "$prefix/grades"
     fun results() = "$prefix/list"
+    fun result(uid: String) = ResultSheetDestinations(this.prefix, uid)
     fun isolated() = ResultDestinations("", root)
 }

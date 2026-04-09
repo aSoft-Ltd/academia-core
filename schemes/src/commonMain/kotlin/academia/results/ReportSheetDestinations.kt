@@ -6,6 +6,7 @@ class ReportSheetDestinations(prefix: String, private val root: String) {
     fun summary() = ReportSummaryDestinations(this.prefix, "summary")
     fun sitters() = ReportSitterDestinations(this.prefix, "sitters")
     fun results() = ReportResultDestinations(this.prefix, "results")
+    fun courses() = ReportCourseDestinations(this.prefix, "courses")
     fun routes() = "$root/*"
     fun isolated() = ReportSheetDestinations("", root)
 }

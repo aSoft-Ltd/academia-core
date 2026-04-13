@@ -1,10 +1,10 @@
-package academia
+package academia.authentication
 
 import heimdal.authentication.LoginResult
 import kotlinx.rpc.annotations.Rpc
 
 @Rpc
-interface Auth {
+interface Authentication {
     /**
      * Attempts to sign in a user with the provided account and password.
      */

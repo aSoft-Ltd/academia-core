@@ -1,4 +1,4 @@
-package art.elements
+package artx.elements
 
 object Kind {
     const val document = "@std/document"

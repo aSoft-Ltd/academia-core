@@ -1,11 +1,11 @@
 package academia.legal
 
-import art.elements.Element
+import art.Element
 import kotlinx.serialization.Serializable
 
 @Serializable
 data class Document(
     val released: String,
-    val prelude: String,
+    val prelude: List<Element>,
     val content: List<Element>
 )

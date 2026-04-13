@@ -1,4 +1,4 @@
-package art.styles
+package artx.styles
 
 class FontStyle(
     val size: Int? = null,

@@ -1,4 +1,4 @@
-package art.styles
+package artx.styles
 
 enum class Display {
     block, inline

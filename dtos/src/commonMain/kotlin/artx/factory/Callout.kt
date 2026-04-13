@@ -5,8 +5,8 @@ import artx.elements.Kind
 import artx.factory.heading
 
 
-fun artx.DocumentBuilder.callout(title: String, content: artx.DocumentBuilder.() -> Unit) = _root_ide_package_.artx.DocumentBuilder.container(
-    kind = _root_ide_package_.artx.elements.Kind.callout,
+fun DocumentBuilder.callout(title: String, content: DocumentBuilder.() -> Unit) = container(
+    kind = Kind.callout,
     current = {
         heading(title)
         content()

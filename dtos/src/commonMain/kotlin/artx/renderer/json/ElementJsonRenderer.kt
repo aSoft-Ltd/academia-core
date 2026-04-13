@@ -11,37 +11,37 @@ import kotlinx.serialization.json.buildJsonArray
 import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.put
 
-fun artx.elements.Element.toJson() = when (this) {
-    is artx.elements.FertileElement -> toJson()
-    is artx.elements.SterileElement -> toJson()
+fun Element.toJson() = when (this) {
+    is FertileElement -> toJson()
+    is SterileElement -> toJson()
 }
 
-private fun artx.elements.SterileElement.toJson(): JsonObject = when (this) {
-    is artx.elements.Text -> toJson()
-    is artx.elements.Link -> toJson()
+private fun SterileElement.toJson(): JsonObject = when (this) {
+    is Text -> toJson()
+    is Link -> toJson()
     else -> buildJsonObject {
-        put(artx.elements.Element::kind.name, _root_ide_package_.artx.elements.Element.kind)
-        put(artx.elements.Element::depth.name, _root_ide_package_.artx.elements.Element.depth)
+        put(Element::kind.name, kind)
+        put(Element::depth.name, depth)
     }
 }
 
-private fun artx.elements.Link.toJson() = buildJsonObject {
-    put(artx.elements.Link::kind.name, _root_ide_package_.artx.elements.Link.kind)
-    put(_root_ide_package_.artx.elements.Link::to.name, to)
-    put(_root_ide_package_.artx.elements.Link::text.name, text)
-    put(_root_ide_package_.artx.elements.Link::depth.name, depth)
+private fun Link.toJson() = buildJsonObject {
+    put(Link::kind.name, kind)
+    put(Link::to.name, to)
+    put(Link::text.name, text)
+    put(Link::depth.name, depth)
 }
 
-private fun artx.elements.Text.toJson() = buildJsonObject {
-    put(_root_ide_package_.artx.elements.Text::kind.name, kind)
-    put(_root_ide_package_.artx.elements.Text::content.name, content)
-    put(_root_ide_package_.artx.elements.Text::depth.name, depth)
+private fun Text.toJson() = buildJsonObject {
+    put(Text::kind.name, kind)
+    put(Text::content.name, content)
+    put(Text::depth.name, depth)
 }
 
-private fun artx.elements.FertileElement.toJson(): JsonObject = buildJsonObject {
-    put(artx.elements.Element::kind.name, _root_ide_package_.artx.elements.Element.kind)
-    put(artx.elements.Element::depth.name, _root_ide_package_.artx.elements.Element.depth)
-    put(artx.elements.FertileElement::children.name, buildJsonArray {
-        _root_ide_package_.artx.elements.FertileElement.children.map { add(it.toJson()) }
+private fun FertileElement.toJson(): JsonObject = buildJsonObject {
+    put(Element::kind.name, kind)
+    put(Element::depth.name, depth)
+    put(FertileElement::children.name, buildJsonArray {
+        children.map { add(it.toJson()) }
     })
 }

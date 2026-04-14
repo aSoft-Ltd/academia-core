@@ -7,5 +7,6 @@ import kotlinx.serialization.Serializable
 data class Document(
     val released: String,
     val prelude: List<Element>,
+    val summary: List<Element>,
     val content: List<Element>
 )

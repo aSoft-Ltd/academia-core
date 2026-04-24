@@ -8,6 +8,8 @@ class ReportSheetDestinations(prefix: String, private val root: String) {
     fun results() = ReportResultDestinations(this.prefix, "results")
     fun courses() = ReportCourseDestinations(this.prefix, "courses")
     fun streams() = ReportStreamsDestinations(this.prefix, "streams")
+    fun stages() = ReportStagesDestinations(this.prefix, "stages")
+    fun splits() = ReportSplitsDestinations(this.prefix, "splits")
     fun subjects() = ReportSubjectsDestinations(this.prefix, "subjects")
     fun routes() = "$root/*"
     fun isolated() = ReportSheetDestinations("", root)

@@ -28,6 +28,9 @@ kotlin {
 
             api(appstractive.jwt.core)?.because("We need to verify JWTs")
             api(appstractive.jwt.hmac)?.because("We need to verify our jwts with HMAC algorithm")
+
+            api(libs.art.core)?.because("We need to render our legal documents with rich text")
+//            api(libs.art.builder)?.because("We need to dynamically generate rich text")
         }
 
         commonTest.dependencies {

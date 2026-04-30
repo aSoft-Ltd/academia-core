@@ -6,6 +6,7 @@ class WebsiteDestinations(prefix: String, private val root: String) {
     val home by lazy { Home(this.prefix, "home") }
     val academics by lazy { Academics(this.prefix, "academics") }
     fun about() = "$prefix/about"
+    fun page() = "$prefix/page"
     fun admissions() = "$prefix/admissions"
     fun news() = "$prefix/news"
     fun fees() = "$prefix/fees"

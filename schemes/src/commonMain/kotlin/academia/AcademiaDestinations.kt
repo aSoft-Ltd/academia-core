@@ -1,6 +1,5 @@
 package academia
 
-import academia.academicSchedule.AcademicScheduleDestinations
 import academia.accounts.AccountDestinations
 import academia.admission.AdmissionDestinations
 import academia.authentication.AuthenticationDestinations
@@ -12,6 +11,7 @@ import academia.payments.PaymentDestinations
 import academia.profile.ProfileDestinations
 import academia.registration.RegistrationDestinations
 import academia.results.ResultsDestinations
+import academia.schedule.AcademicSchedulesDestinations
 import academia.student.StudentDestinations
 import academia.teachers.TeacherDestinations
 import academia.users.UsersDestinations
@@ -30,7 +30,7 @@ class AcademiaDestinations(private val prefix: String) { // e.g. "https://academ
     val users by lazy { UsersDestinations(prefix, "users") }
     val students by lazy { StudentDestinations(prefix, "students") }
     val results by lazy { ResultsDestinations(prefix, "results") }
-    val academicSchedule by lazy { AcademicScheduleDestinations(prefix, "academic-schedule") }
+    val academicSchedule by lazy { AcademicSchedulesDestinations(prefix, "academic-schedule") }
     val teachers by lazy { TeacherDestinations(prefix, "teachers") }
     val accounts by lazy { AccountDestinations(prefix, "accounts") }
     val noticeboard by lazy { NoticeBoardDestinations(prefix, "noticeboard") }

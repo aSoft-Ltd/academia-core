@@ -6,5 +6,5 @@ import kotlinx.serialization.Serializable
 data class Credit(
     val name: String,
     val feature: Feature,
-    val amount: Amount,
+    val amount: Map<Month, Int>,
 )

@@ -6,5 +6,5 @@ import kotlinx.serialization.Serializable
 data class Package(
     val name: String,
     val offerings: List<Offer>,
-    val amount: Amount
+    val amount: Map<Month, Int>
 )

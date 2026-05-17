@@ -4,6 +4,6 @@ import kotlinx.rpc.annotations.Rpc
 
 @Rpc
 interface Pricing {
-    suspend fun packages(): List<Package>
-    suspend fun credits(): List<Credit>
+    suspend fun current(): PricingMatrix
+    suspend fun load(uid: String): PricingMatrix?
 }

@@ -1,10 +1,9 @@
 package academia.pricing
 
 enum class Month {
-    One,
-    Two,
-    Three,
-    Six,
-    Twelve,
-    Unlimited
+    M01,
+    M03,
+    M06,
+    M12,
+    MXX
 }

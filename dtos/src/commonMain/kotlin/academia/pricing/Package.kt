@@ -5,6 +5,12 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Package(
     val name: String,
-    val offerings: List<Offer>,
-    val amount: Map<Month, Int>
-)
+    val amount: Map<Month, Int>,
+    val offerings: Map<Month, List<Offering>>
+) {
+    @Serializable
+    class Offering(
+        val feature: Feature,
+        val credits: CostFunc
+    )
+}

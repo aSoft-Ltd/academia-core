@@ -14,4 +14,8 @@ import kotlinx.serialization.Serializable
 data class CostFunc(
     val f: Int,
     val v: Int
-)
+) {
+    companion object {
+        val Zero by lazy { CostFunc(0, 0) }
+    }
+}

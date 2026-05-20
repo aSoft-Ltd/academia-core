@@ -11,6 +11,13 @@ data class Package(
     @Serializable
     class Offering(
         val feature: Feature,
-        val credits: CostFunc
-    )
+        val credits: CredFunc
+    ) {
+        fun label(): String {
+            if (credits.v == 0 && credits.f == 0) return "Free ${feature.name.lowercase()}"
+            if (credits.v == 0) return "${credits.f} ${feature.name}"
+            if (credits.v == Int.MAX_VALUE) return "Unlimited ${feature.name.lowercase()}"
+            return "${credits.f} ${feature.name} + ${credits.v} per student"
+        }
+    }
 }

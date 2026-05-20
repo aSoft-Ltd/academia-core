@@ -11,11 +11,12 @@ import kotlinx.serialization.Serializable
  * x - will be the number of students
  */
 @Serializable
-data class CostFunc(
+data class CredFunc(
     val f: Int,
     val v: Int
 ) {
     companion object {
-        val Zero by lazy { CostFunc(0, 0) }
+        val Zero by lazy { CredFunc(0, 0) }
+        val Unlimited by lazy { CredFunc(0, Int.MAX_VALUE) }
     }
 }

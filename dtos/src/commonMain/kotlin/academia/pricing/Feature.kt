@@ -2,9 +2,10 @@ package academia.pricing
 
 enum class Feature {
     Website,
+    Transport,
     Admission,
     Result,
-    Invoices,
-    Payments,
-    Promotions
+    Invoice,
+    Payment,
+    Promotion
 }

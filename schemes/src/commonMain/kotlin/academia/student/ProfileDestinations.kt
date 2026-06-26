@@ -9,6 +9,7 @@ class ProfileDestinations(prefix: String, private val root: String) {
     fun attachments() = "$prefix/attachments"
     fun conversations() = "$prefix/conversations"
     fun activities() = "$prefix/activities"
+    fun leave() = "$prefix/leave"
     fun contacts() = "$prefix/contacts"
     fun invoices() = "$prefix/invoices"
     fun permissions() = "$prefix/permissions"

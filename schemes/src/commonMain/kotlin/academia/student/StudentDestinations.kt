@@ -7,5 +7,7 @@ class StudentDestinations(prefix: String, private val root: String) {
     fun guardians() = "$prefix/guardians"
     fun sick() = "$prefix/sick"
     fun absent() = "$prefix/absent"
-    val profile by lazy { ProfileDestinations(this.prefix, "profile") }
+    fun profile(uid: String) = ProfileDestinations(this.prefix, uid)
+    fun isolated() = StudentDestinations("", root)
+    fun routes() = "$root/*"
 }

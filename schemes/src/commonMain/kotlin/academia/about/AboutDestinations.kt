@@ -5,6 +5,8 @@ class AboutDestinations(prefix: String, private val root: String) {
     fun index() = prefix
     fun social() = "$prefix/social"
     fun dependencies() = "$prefix/dependencies"
+    fun terms() = "$prefix/terms"
+    fun term(version: String) = "${terms()}/$version"
     fun routes() = "$root/*"
     fun isolated() = AboutDestinations("", root)
 }

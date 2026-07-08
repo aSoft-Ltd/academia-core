@@ -28,7 +28,9 @@ class AdmissionDestinations(prefix: String, private val root: String) {
     fun adverts() = "$prefix/adverts"
     fun applicants() = "$prefix/applicants"
     fun opportunities() = "$prefix/opportunities"
-    val applicant by lazy { ApplicantDestinations(this.prefix, "applicants/profile") }
+    fun applicant(uid: String) = ApplicantDestinations(this.prefix, "applicants/$uid")
     val guardian by lazy { GuardianDestinations(this.prefix, "guardians") }
     val opportunity by lazy { OpportunityDestinations(this.prefix, "opportunity") }
+    fun isolated() = AdmissionDestinations("", root)
+    fun routes() = "$root/*"
 }

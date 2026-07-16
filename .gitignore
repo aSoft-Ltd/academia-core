@@ -4,6 +4,8 @@ build
 node_modules
 **/node_modules
 classes
+!schemes/src/commonMain/kotlin/academia/classes/
+!schemes/src/commonMain/kotlin/academia/classes/**
 **/build
 .gradle
 **/.gradle

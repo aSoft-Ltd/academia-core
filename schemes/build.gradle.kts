@@ -16,7 +16,7 @@ kotlin {
         }
     }
     wasmJs { browser() } // until coil and kotlinx-datetime supports this, we ain't gonna
-    val ios = listOf(iosArm64(), iosX64(), iosSimulatorArm64())
+    val ios = listOf(iosArm64(), iosSimulatorArm64())
 
     sourceSets {
         commonMain.dependencies {

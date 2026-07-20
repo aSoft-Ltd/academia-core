@@ -1,4 +1,4 @@
-package academia.authentication
+package academia.schemes.authentication
 
 interface PasswordScheme {
     suspend fun reset(account: String): String

@@ -1,4 +1,6 @@
-package academia.authentication
+package academia.schemes.authentication
+
+import academia.authentication.SignInParams
 
 class AuthenticationLogMessages {
     fun signIn(params: SignInParams) = "Signing ${params.account} in"

@@ -3,7 +3,7 @@ package academia
 import academia.about.AboutDestinations
 import academia.accounts.AccountDestinations
 import academia.admission.AdmissionDestinations
-import academia.authentication.AuthenticationDestinations
+import academia.schemes.authentication.AuthenticationDestinations
 import academia.blog.BlogDestinations
 import academia.classes.ClassesDestinations
 import academia.legal.LegalDestinations

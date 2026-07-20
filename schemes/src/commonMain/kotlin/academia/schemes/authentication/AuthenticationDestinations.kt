@@ -1,8 +1,9 @@
-package academia.authentication
+package academia.schemes.authentication
 
 class AuthenticationDestinations(private val base: String) {
 
     fun signIn() = "$base/sign/in"
+    fun signOut() = "$base/sign/out"
 
     fun signIn(account: String, password: String) = signIn() + "?account=$account&password=$password"
 

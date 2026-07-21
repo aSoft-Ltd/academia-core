@@ -3,7 +3,7 @@ package academia.classes
 class ClassesDestinations(prefix: String, private val root: String) {
     private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
     fun index() = prefix
-    fun `class`(uid: String) = ClassDestinations(this.prefix, uid)
+    fun detail(uid: String) = ClassDestinations(this.prefix, uid)
     fun routes() = "$root/*"
     fun isolated() = ClassesDestinations("", root)
 

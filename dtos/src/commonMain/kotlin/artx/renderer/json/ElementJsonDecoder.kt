@@ -25,26 +25,26 @@ import kotlinx.serialization.json.jsonPrimitive
 import kotlin.reflect.KProperty
 
 private fun JsonObject.toElement(): artx.elements.Element = when (kind) {
-    in listOf(_root_ide_package_.artx.elements.Kind.text, _root_ide_package_.artx.elements.Kind.h1, _root_ide_package_.artx.elements.Kind.h2, _root_ide_package_.artx.elements.Kind.h3, _root_ide_package_.artx.elements.Kind.h4, _root_ide_package_.artx.elements.Kind.h5, _root_ide_package_.artx.elements.Kind.h6) -> toText()
-    _root_ide_package_.artx.elements.Kind.link -> toLink()
-    _root_ide_package_.artx.elements.Kind.document -> toDocument()
-    in listOf(_root_ide_package_.artx.elements.Kind.callout, _root_ide_package_.artx.elements.Kind.paragraph) -> toFertileElement()
-    else -> _root_ide_package_.artx.renderer.json.UnknownElement(kind, depth)
+    in listOf(artx.elements.Kind.text, artx.elements.Kind.h1, artx.elements.Kind.h2, artx.elements.Kind.h3, artx.elements.Kind.h4, artx.elements.Kind.h5, artx.elements.Kind.h6) -> toText()
+    artx.elements.Kind.link -> toLink()
+    artx.elements.Kind.document -> toDocument()
+    in listOf(artx.elements.Kind.callout, artx.elements.Kind.paragraph) -> toFertileElement()
+    else -> artx.renderer.json.UnknownElement(kind, depth)
 }
 
 private val JsonObject.kind get() = getValue(artx.elements.Element::kind.name).jsonPrimitive.content
 private val JsonObject.depth get() = getValue(artx.elements.Element::depth.name).jsonPrimitive.int
 private fun JsonObject.string(key: KProperty<*>) = getValue(key.name).jsonPrimitive.content
 
-private fun JsonObject.toText() = _root_ide_package_.artx.elements.Text(
+private fun JsonObject.toText() = artx.elements.Text(
     kind = kind,
     depth = depth,
-    content = string(_root_ide_package_.artx.elements.Text::content)
+    content = string(artx.elements.Text::content)
 )
 
-private fun JsonObject.toLink() = _root_ide_package_.artx.elements.Link(
-    to = string(_root_ide_package_.artx.elements.Link::to),
-    text = string(_root_ide_package_.artx.elements.Link::text),
+private fun JsonObject.toLink() = artx.elements.Link(
+    to = string(artx.elements.Link::to),
+    text = string(artx.elements.Link::text),
     depth = depth,
     styles = null
 )
@@ -53,11 +53,11 @@ private val JsonObject.children get() = getValue(artx.elements.FertileElement::c
 
 private val JsonObject.childrenAsElements get() = children.map { it.jsonObject.toElement() }
 
-fun JsonObject.toDocument() = _root_ide_package_.artx.Document(
+fun JsonObject.toDocument() = artx.Document(
     children = childrenAsElements
 )
 
-private fun JsonObject.toFertileElement() = _root_ide_package_.artx.elements.internal.FertileComponentImpl(
+private fun JsonObject.toFertileElement() = artx.elements.internal.FertileComponentImpl(
     kind = kind,
     depth = depth,
     children = childrenAsElements

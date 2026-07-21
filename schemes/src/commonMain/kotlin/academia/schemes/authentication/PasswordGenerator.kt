@@ -1,4 +1,4 @@
-package academia.authentication
+package academia.schemes.authentication
 
 import kotlin.random.Random
 

@@ -1,6 +1,6 @@
 package academia
 
-import academia.authentication.AuthenticationLogMessages
+import academia.schemes.authentication.AuthenticationLogMessages
 import academia.legal.LegalLogMessages
 import academia.registration.RegistrationLogMessages
 

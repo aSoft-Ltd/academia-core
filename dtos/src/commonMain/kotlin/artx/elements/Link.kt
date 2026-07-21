@@ -8,5 +8,5 @@ class Link(
     override val depth: Int,
     val styles: artx.styles.TextStyle?,
 ) : artx.elements.SterileElement {
-    override val kind: String = _root_ide_package_.artx.elements.Kind.link
+    override val kind: String = artx.elements.Kind.link
 }

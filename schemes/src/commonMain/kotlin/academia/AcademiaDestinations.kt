@@ -3,7 +3,6 @@ package academia
 import academia.about.AboutDestinations
 import academia.accounts.AccountDestinations
 import academia.admission.AdmissionDestinations
-import academia.schemes.authentication.AuthenticationDestinations
 import academia.blog.BlogDestinations
 import academia.classes.ClassesDestinations
 import academia.legal.LegalDestinations
@@ -12,9 +11,11 @@ import academia.notifications.NotificationDestinations
 import academia.onboarding.OnboardingDestinations
 import academia.payments.PaymentDestinations
 import academia.profile.ProfileDestinations
+import academia.programmes.ProgrammesDestinations
 import academia.registration.RegistrationDestinations
 import academia.results.ResultsDestinations
 import academia.schedule.AcademicSchedulesDestinations
+import academia.schemes.authentication.AuthenticationDestinations
 import academia.student.StudentDestinations
 import academia.teachers.TeacherDestinations
 import academia.users.UsersDestinations
@@ -35,6 +36,7 @@ class AcademiaDestinations(private val prefix: String) { // e.g. "https://academ
     val students by lazy { StudentDestinations(prefix, "students") }
     val results by lazy { ResultsDestinations(prefix, "results") }
     val academicSchedule by lazy { AcademicSchedulesDestinations(prefix, "academic-schedule") }
+    val programmes by lazy { ProgrammesDestinations(prefix, "programmes") }
     val teachers by lazy { TeacherDestinations(prefix, "teachers") }
     val classes by lazy { ClassesDestinations(prefix, "classes") }
     val accounts by lazy { AccountDestinations(prefix, "accounts") }

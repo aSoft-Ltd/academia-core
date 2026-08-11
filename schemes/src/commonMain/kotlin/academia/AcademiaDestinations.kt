@@ -5,6 +5,7 @@ import academia.accounts.AccountDestinations
 import academia.admission.AdmissionDestinations
 import academia.blog.BlogDestinations
 import academia.classes.ClassesDestinations
+import academia.combination.CombinationDestinations
 import academia.legal.LegalDestinations
 import academia.noticesboard.NoticeBoardDestinations
 import academia.notifications.NotificationDestinations
@@ -37,6 +38,7 @@ class AcademiaDestinations(private val prefix: String) { // e.g. "https://academ
     val results by lazy { ResultsDestinations(prefix, "results") }
     val academicSchedule by lazy { AcademicSchedulesDestinations(prefix, "academic-schedule") }
     val programmes by lazy { ProgrammesDestinations(prefix, "programmes") }
+    val combinations by lazy { CombinationDestinations(prefix, "combinations") }
     val teachers by lazy { TeacherDestinations(prefix, "teachers") }
     val classes by lazy { ClassesDestinations(prefix, "classes") }
     val accounts by lazy { AccountDestinations(prefix, "accounts") }

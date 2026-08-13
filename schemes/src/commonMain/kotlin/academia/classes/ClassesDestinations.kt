@@ -25,11 +25,29 @@ class ClassesDestinations(prefix: String, private val root: String) {
             fun index() = prefix
             fun students() = "$prefix/students"
             fun topics() = "$prefix/topics"
+            fun topic(uid: String) = TopicDestinations(this.prefix, "topics/$uid")
             fun periods() = "$prefix/periods"
             fun attendance() = "$prefix/attendance"
             fun questions() = "$prefix/questions"
             fun routes() = "$root/*"
             fun isolated() = SubjectDestinations("", root)
+
+            class TopicDestinations(prefix: String, private val root: String) {
+                private val prefix by lazy { if (prefix.isEmpty()) root else "$prefix/$root" }
+                fun index() = prefix
+                fun subtopic(uid: String) = SubtopicDestinations(this.prefix, "subtopics/$uid")
+                fun routes() = "$root/*"
+                fun isolated() = TopicDestinations("", root)
+
+                class SubtopicDestinations(prefix: String, private val root: String) {
+                    private val prefix by lazy { if (prefix.isEmpty()) root else "$prefix/$root" }
+                    fun index() = prefix
+                    fun generalPlan() = "$prefix/general-plan"
+                    fun lessonDevelopment() = "$prefix/lesson-development"
+                    fun routes() = "$root/*"
+                    fun isolated() = SubtopicDestinations("", root)
+                }
+            }
         }
 
         class StreamDestinations(prefix: String, private val root: String) {

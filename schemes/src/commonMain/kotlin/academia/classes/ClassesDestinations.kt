@@ -39,6 +39,7 @@ class ClassesDestinations(prefix: String, private val root: String) {
             class PeriodDestinations(prefix: String, private val root: String) {
                 private val prefix by lazy { if (prefix.isEmpty()) root else "$prefix/$root" }
                 fun index() = prefix
+                fun plan() = "$prefix/plan"
                 fun routes() = "$root/*"
                 fun isolated() = PeriodDestinations("", root)
             }

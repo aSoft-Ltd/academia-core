@@ -1,5 +1,7 @@
 package academia.classes
 
+import academia.attendance.AttendanceDestinations
+
 class ClassesDestinations(prefix: String, private val root: String) {
     private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
     fun index() = prefix
@@ -17,6 +19,7 @@ class ClassesDestinations(prefix: String, private val root: String) {
         fun subject(uid: String) = SubjectDestinations(this.prefix, "subjects/$uid")
         fun teachers() = "$prefix/teachers"
         fun attendance() = "$prefix/attendance"
+        fun attendance(uid: String) = AttendanceDestinations(this.prefix, "attendance/$uid")
         fun routes() = "$root/*"
         fun isolated() = ClassDestinations("", root)
 

@@ -30,10 +30,18 @@ class ClassesDestinations(prefix: String, private val root: String) {
             fun topics() = "$prefix/topics"
             fun topic(uid: String) = TopicDestinations(this.prefix, "topics/$uid")
             fun periods() = "$prefix/periods"
+            fun period(uid: String) = PeriodDestinations(this.prefix, "periods/$uid")
             fun attendance() = "$prefix/attendance"
             fun questions() = "$prefix/questions"
             fun routes() = "$root/*"
             fun isolated() = SubjectDestinations("", root)
+
+            class PeriodDestinations(prefix: String, private val root: String) {
+                private val prefix by lazy { if (prefix.isEmpty()) root else "$prefix/$root" }
+                fun index() = prefix
+                fun routes() = "$root/*"
+                fun isolated() = PeriodDestinations("", root)
+            }
 
             class TopicDestinations(prefix: String, private val root: String) {
                 private val prefix by lazy { if (prefix.isEmpty()) root else "$prefix/$root" }

@@ -40,6 +40,7 @@ class ClassesDestinations(prefix: String, private val root: String) {
                 private val prefix by lazy { if (prefix.isEmpty()) root else "$prefix/$root" }
                 fun index() = prefix
                 fun plan() = PlanDestinations(this.prefix, "plan")
+                fun lesson(uid: String) = LessonDestinations(this.prefix, "lessons/$uid")
                 fun routes() = "$root/*"
                 fun isolated() = PeriodDestinations("", root)
 
@@ -48,6 +49,17 @@ class ClassesDestinations(prefix: String, private val root: String) {
                     fun index() = prefix
                     fun routes() = "$root/*"
                     fun isolated() = PlanDestinations("", root)
+                }
+
+                class LessonDestinations(prefix: String, private val root: String) {
+                    private val prefix by lazy { if (prefix.isEmpty()) root else "$prefix/$root" }
+                    fun index() = prefix
+                    fun lessonPlan() = "$prefix/lesson-plan"
+                    fun lessonDevelopment() = "$prefix/lesson-development"
+                    fun remarks() = "$prefix/remarks"
+                    fun attendance() = "$prefix/attendance"
+                    fun routes() = "$root/*"
+                    fun isolated() = LessonDestinations("", root)
                 }
             }
 

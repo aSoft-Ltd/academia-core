@@ -2,7 +2,7 @@ package academia.profile.school
 
 class CurriculumsDestinations(prefix: String, private val root: String) {
     private val prefix by lazy { if (prefix.isEmpty()) "" else "$prefix/$root" }
-    fun index() = "/$prefix"
+    fun index(isOnboarding: Boolean = false) = "/$prefix?isOnboarding=$isOnboarding"
     fun routes() = "$root/*"
     fun contacts() = "$prefix/contacts"
     fun social() = "$prefix/social"

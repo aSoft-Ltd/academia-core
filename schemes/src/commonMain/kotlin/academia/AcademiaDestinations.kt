@@ -43,7 +43,7 @@ class AcademiaDestinations(private val prefix: String) { // e.g. "https://academ
     val classes by lazy { ClassesDestinations(prefix, "classes") }
     val accounts by lazy { AccountDestinations(prefix, "accounts") }
     val noticeboard by lazy { NoticeBoardDestinations(prefix, "noticeboard") }
-    val onboarding by lazy { OnboardingDestinations(prefix, "onboarding") }
+    val onboarding by lazy { OnboardingDestinations(prefix, "onboarding?stage=2") }
     val notification by lazy { NotificationDestinations(prefix, "notification") }
     fun search(query: String) = "$prefix/search/$query"
     fun settings() = "$prefix/settings"

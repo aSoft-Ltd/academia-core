@@ -5,7 +5,7 @@ class AcademicScheduleDestinations(prefix: String, private val root: String) {
     fun index() = prefix
     fun routes() = "$root/*"
     fun calendar() = "$prefix/calendar"
-    fun student() = "$prefix/students"
+    fun student(isOnboarding: Boolean = false) = "$prefix/students?isOnboarding=$isOnboarding"
     fun combination() = "$prefix/combination"
     fun programme() = "$prefix/programmes"
     fun module() = "$prefix/modules"

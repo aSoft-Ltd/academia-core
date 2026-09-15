@@ -75,6 +75,7 @@ class ClassesDestinations(prefix: String, private val root: String) {
             class TopicDestinations(prefix: String, private val root: String) {
                 private val prefix by lazy { if (prefix.isEmpty()) root else "$prefix/$root" }
                 fun index() = prefix
+                fun subtopics() = "$prefix/subtopics"
                 fun sessions() = "$prefix/sessions"
                 fun plans() = "$prefix/plans"
                 fun questions() = "$prefix/questions"

@@ -77,6 +77,7 @@ class ClassesDestinations(prefix: String, private val root: String) {
                 fun index() = prefix
                 fun subtopics() = "$prefix/subtopics"
                 fun sessions() = "$prefix/sessions"
+                fun session(uid: String) = PeriodDestinations(this.prefix, "sessions/$uid")
                 fun plans() = "$prefix/plans"
                 fun questions() = "$prefix/questions"
                 fun exams() = "$prefix/exams"

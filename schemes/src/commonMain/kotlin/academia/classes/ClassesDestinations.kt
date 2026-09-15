@@ -92,6 +92,11 @@ class ClassesDestinations(prefix: String, private val root: String) {
                     fun index() = prefix
                     fun generalPlan() = "$prefix/general-plan"
                     fun lessonDevelopment() = "$prefix/lesson-development"
+                    fun plans() = "$prefix/plans"
+                    fun sessions() = "$prefix/sessions"
+                    fun questions() = "$prefix/questions"
+                    fun exams() = "$prefix/exams"
+                    fun attendance() = "$prefix/attendance"
                     fun routes() = "$root/*"
                     fun isolated() = SubtopicDestinations("", root)
                 }

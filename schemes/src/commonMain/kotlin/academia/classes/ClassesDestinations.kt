@@ -75,6 +75,13 @@ class ClassesDestinations(prefix: String, private val root: String) {
             class TopicDestinations(prefix: String, private val root: String) {
                 private val prefix by lazy { if (prefix.isEmpty()) root else "$prefix/$root" }
                 fun index() = prefix
+                fun subtopics() = "$prefix/subtopics"
+                fun sessions() = "$prefix/sessions"
+                fun session(uid: String) = PeriodDestinations(this.prefix, "sessions/$uid")
+                fun plans() = "$prefix/plans"
+                fun questions() = "$prefix/questions"
+                fun exams() = "$prefix/exams"
+                fun attendance() = "$prefix/attendance"
                 fun subtopic(uid: String) = SubtopicDestinations(this.prefix, "subtopics/$uid")
 
                 fun routes() = "$root/*"
@@ -85,6 +92,12 @@ class ClassesDestinations(prefix: String, private val root: String) {
                     fun index() = prefix
                     fun generalPlan() = "$prefix/general-plan"
                     fun lessonDevelopment() = "$prefix/lesson-development"
+                    fun plans() = "$prefix/plans"
+                    fun sessions() = "$prefix/sessions"
+                    fun session(uid: String) = PeriodDestinations(this.prefix, "sessions/$uid")
+                    fun questions() = "$prefix/questions"
+                    fun exams() = "$prefix/exams"
+                    fun attendance() = "$prefix/attendance"
                     fun routes() = "$root/*"
                     fun isolated() = SubtopicDestinations("", root)
                 }

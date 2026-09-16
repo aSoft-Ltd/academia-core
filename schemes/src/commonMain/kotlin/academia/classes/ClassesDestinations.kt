@@ -94,6 +94,7 @@ class ClassesDestinations(prefix: String, private val root: String) {
                     fun lessonDevelopment() = "$prefix/lesson-development"
                     fun plans() = "$prefix/plans"
                     fun sessions() = "$prefix/sessions"
+                    fun session(uid: String) = PeriodDestinations(this.prefix, "sessions/$uid")
                     fun questions() = "$prefix/questions"
                     fun exams() = "$prefix/exams"
                     fun attendance() = "$prefix/attendance"

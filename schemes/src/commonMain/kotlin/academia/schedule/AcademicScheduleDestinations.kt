@@ -12,6 +12,6 @@ class AcademicScheduleDestinations(prefix: String, private val root: String) {
     fun graduate() = "$prefix/graduates"
     fun teachers(isOnboarding: Boolean = false) = "$prefix/teachers?isOnboarding=$isOnboarding"
     fun tutors(isOnboarding: Boolean = false) = "$prefix/tutors?isOnboarding=$isOnboarding"
-    fun classes() = "$prefix/classes"
+    fun classes(isOnboarding: Boolean = false) = "$prefix/classes?isOnboarding=$isOnboarding"
     fun isolated() = AcademicScheduleDestinations("", root)
 }

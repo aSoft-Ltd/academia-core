@@ -15,7 +15,7 @@ class ClassesDestinations(prefix: String, private val root: String) {
         private val prefix by lazy { if (prefix.isEmpty()) root else "$prefix/$root" }
         fun index() = prefix
         fun students() = "$prefix/students"
-        fun streams() = "$prefix/streams"
+        fun streams(isOnboarding: Boolean = false) = "$prefix/streams?isOnboarding=$isOnboarding"
         fun stream(uid: String) = StreamDestinations(this.prefix, "streams/$uid")
 
         fun subjects() = "$prefix/subjects"

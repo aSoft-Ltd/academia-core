@@ -4,7 +4,7 @@ import org.jetbrains.compose.ExperimentalComposeLibrary
 plugins {
     kotlin("multiplatform")
     kotlin("plugin.serialization")
-    id("org.jetbrains.kotlinx.rpc.plugin")
+    
 }
 
 description = "The common interfaces between the two shared modules"

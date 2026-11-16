@@ -11,15 +11,16 @@ class ClassesDestinations(prefix: String, private val root: String) {
     fun routes() = "$root/*"
     fun isolated() = ClassesDestinations("", root)
 
-    class ClassDestinations(prefix: String, private val root: String) {
+    class ClassDestinations(prefix: String, private val root: String) : ClassUnitDestinations {
         private val prefix by lazy { if (prefix.isEmpty()) root else "$prefix/$root" }
         fun index() = prefix
         fun students() = "$prefix/students"
-        fun streams(isOnboarding: Boolean = false) = "$prefix/streams?isOnboarding=$isOnboarding"
-        fun stream(uid: String) = StreamDestinations(this.prefix, "streams/$uid")
+        override fun streams() = streams(isOnboarding = false)
+        fun streams(isOnboarding: Boolean) = "$prefix/streams?isOnboarding=$isOnboarding"
+        override fun stream(uid: String) = StreamDestinations(this.prefix, "streams/$uid")
 
-        fun subjects() = "$prefix/subjects"
-        fun subject(uid: String) = SubjectDestinations(this.prefix, "subjects/$uid")
+        override fun subjects() = "$prefix/subjects"
+        override fun subject(uid: String) = SubjectDestinations(this.prefix, "subjects/$uid")
 
         fun teachers() = "$prefix/teachers"
         fun attendance() = "$prefix/attendance"
